@@ -1,7 +1,7 @@
 libraries {
     maven
+    git
     sonarqube
-    ansible
     splunk {
         afterSteps = [ "static_code_analysis", "unit_test"  ]
     }
