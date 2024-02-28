@@ -1,3 +1,6 @@
+import hudson.model.*
+import hudson.
+
 void call() {
     agent { docker { image 'maven:3.3.3' } }
     stage('log version info') {
