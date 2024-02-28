@@ -1,6 +1,6 @@
 void call() {
     agent { docker { image 'maven:3.3.3' } }
-    stage('log version info') {
+    stage('logVersionInfo') {
         steps {
             script {
                 def mavenVersion = sh(script: 'mvn --version', returnStdout: true).trim()
