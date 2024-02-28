@@ -11,10 +11,4 @@ stages {
         build
         static_code_analysis
     }
-    stage('log version info') {
-      steps {
-        sh 'mvn --version'
-        sh 'mvn clean install'
-      }
-    }
 }
