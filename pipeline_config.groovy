@@ -12,5 +12,5 @@ stages {
         build
         static_code_analysis
     }
-    log version info
+    logVersion
 }
