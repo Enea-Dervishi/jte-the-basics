@@ -1,6 +1,6 @@
 void call() {
     agent { docker { image 'maven:3.3.3' } }
-    stage('logVersion') {
+    stage('build') {
       steps {
         sh 'mvn --version && mvn clean install'
       }
