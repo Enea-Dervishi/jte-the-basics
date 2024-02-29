@@ -2,8 +2,8 @@ libraries {
     maven
     git
     sonarqube
-    splunk {
-        afterSteps = [ "static_code_analysis", "unit_test"  ]
+    /* splunk {
+        afterSteps = [ "static_code_analysis", "unit_test"  ] */
     }
 
 }
