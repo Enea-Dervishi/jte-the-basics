@@ -12,3 +12,4 @@ This library includes the following Template Eengine primitives:
 * Maven
 * Sonarqube
 * Splunk
+*
