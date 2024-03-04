@@ -1,15 +1,20 @@
 void call() {
-    podTemplate(containers: [
+  podTemplate(containers: [
         containerTemplate(name: 'maven', image: 'maven:3.9-eclipse-temurin-21', ttyEnabled: true, command: 'cat')
     ]) {
-        node(POD_LABEL) {
-            stage('Build a Maven project'){
-                container('maven') {
-                    stage('Build a Maven project') {
-                        sh 'mvn -B clean install'
-                    }
-                }
+        agent {
+      node(POD_LABEL) {
+        label 'master'
+        stages {
+          stage('Build a Maven project') {
+            steps {
+              container('maven') {
+                sh 'mvn -B clean install'
+              }
             }
+          }
+        }
+      }
         }
     }
 }
