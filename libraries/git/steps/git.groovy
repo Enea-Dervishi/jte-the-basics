@@ -1,9 +1,3 @@
-void call() {
-    node {
-        stage('Checkout') {
-            steps {
-                sh 'git clone https://github.com/jenkinsci/kubernetes-plugin.git'
-            }
-        }
-    }
-}
+checkout scmGit(
+    branches: [[name: 'master']],
+    userRemoteConfigs: [[url: 'https://github.com/jenkinsci/kubernetes-plugin']])
