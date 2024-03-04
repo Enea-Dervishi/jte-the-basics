@@ -7,10 +7,10 @@ void call() {
         label 'master'
         stages {
           stage('Build a Maven project') {
-            steps {
-              container('maven') {
-                sh 'mvn -B clean install'
-              }
+            steps{
+            container('maven') {
+              sh 'mvn -B clean install'
+            }
             }
           }
         }
