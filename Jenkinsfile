@@ -1,2 +1,2 @@
-build()
 checkout()
+build()
