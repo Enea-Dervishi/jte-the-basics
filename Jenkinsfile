@@ -1,2 +1,2 @@
-continuous_integration()
-logVersion()
+checkout()
+build()

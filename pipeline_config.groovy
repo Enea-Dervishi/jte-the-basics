@@ -1,12 +1,8 @@
-libraries {
-    maven
-    /*git
-    sonarqube
-     splunk {
-        afterSteps = [ "static_code_analysis", "unit_test"  ] 
-    }*/
-
+libraries{
+  git
+  maven
 }
+
 stages {
     continuous_integration {
         build
