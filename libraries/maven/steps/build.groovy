@@ -7,6 +7,7 @@ void call() {
         def extWorkspace = exwsAllocate 'disk1'
         node(POD_LABEL) {
             exws(extWorkspace){
+                checkout scm
             container('maven') {
                 stage('Build a Maven project') {
                     sh 'mvn -B -ntp clean install'
