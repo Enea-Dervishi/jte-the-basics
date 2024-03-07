@@ -4,17 +4,18 @@ void call() {
             containerTemplate(name: 'maven', image: 'maven:3.9-eclipse-temurin-21', ttyEnabled: true, command: 'cat')
         ]
     ) {
+        def extWorkspace = exwsAllocate 'disk1'
         node(POD_LABEL) {
-             stage('Get a Maven project') {
-            git 'https://github.com/jenkinsci/kubernetes-plugin.git'
+            exws(extWorkspace){
             container('maven') {
                 stage('Build a Maven project') {
                     sh 'mvn -B -ntp clean install'
                 }
             }
+            }
         }
 
-        stage('Get a Golang project') {
+        /*stage('Get a Golang project') {
             git url: 'https://github.com/hashicorp/terraform.git', branch: 'main'
             container('golang') {
                 stage('Build a Go project') {
@@ -25,7 +26,7 @@ void call() {
                     '''
                 }
             }
-        }
+        }*/
         }
     }
 }
